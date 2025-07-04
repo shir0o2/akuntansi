@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Akun</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-card" id="login-form">
+      <h2>Login Akun</h2>
+      <hr />
+
+      <input type="text" id="username" placeholder="Masukkan Username" required />
+      <input type="password" id="password" placeholder="Masukkan Password" required />
+
+      <button type="submit">Login</button>
+
+      <div class="login-links">
+        <p><a href="register.html">Belum punya akun? Daftar</a></p>
+        <p><a href="reset.html">Lupa Password?</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    // Pastikan form login memanggil fungsi login dari auth.js
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      login(e);
+    });
+  </script>
+</body>
+</html>

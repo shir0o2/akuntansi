@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Selamat Datang!</h2>
+    <p>Ini adalah halaman setelah login berhasil.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script>
+    if (!localStorage.getItem("loggedInUser")) {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrasi Akun</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Jika belum ada style.css atau ingin tambahan di sini langsung */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .register-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .register-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .register-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .register-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .register-container button:hover {
+      background-color: #218838;
+    }
+
+    .register-container p {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .register-container a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .register-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h2>Registrasi Akun</h2>
+    <form onsubmit="register(event)">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Daftar</button>
+    </form>
+    <p><a href="login.html">Sudah punya akun? Login</a></p>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3000;
+const filePath = path.join(__dirname, 'data', 'transaksi.json');
+
+app.use(cors());
+app.use(express.json());
+
+// Ambil semua transaksi
+app.get('/transaksi', (req, res) => {
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Gagal membaca data');
+    res.json(JSON.parse(data));
+  });
+});
+
+// Tambahkan transaksi baru
+app.post('/transaksi', (req, res) => {
+  const { tanggal, akun, keterangan, debit, kredit } = req.body;
+  if (!tanggal || !akun || (!debit && !kredit)) {
+    return res.status(400).json({ error: 'Data tidak lengkap.' });
+  }
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) return res.status(500).send('Gagal membaca data');
+
+    const transaksi = JSON.parse(data);
+    transaksi.push({ tanggal, akun, keterangan, debit, kredit });
+
+    fs.writeFile(filePath, JSON.stringify(transaksi, null, 2), err => {
+      if (err) return res.status(500).send('Gagal menyimpan data');
+      res.json({ success: true });
+    });
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
+});

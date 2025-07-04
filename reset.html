@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Tambahan gaya jika tidak ada di style.css */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .reset-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .reset-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .reset-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .reset-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .reset-container button:hover {
+      background-color: #c82333;
+    }
+
+    .reset-container p {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .reset-container a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .reset-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="reset-container">
+    <h2>Reset Password</h2>
+    <form onsubmit="resetPassword(event)">
+      <input type="text" id="username" placeholder="Masukkan Username" required />
+      <input type="password" id="newPassword" placeholder="Masukkan Password Baru" required />
+      <button type="submit">Reset Password</button>
+    </form>
+    <p><a href="login.html">Kembali ke Login</a></p>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

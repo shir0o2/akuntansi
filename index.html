@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplikasi Akuntansi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <h1>Aplikasi Akuntansi</h1>
+
+    <div class="menu-buttons">
+      <button onclick="tampilkan('form')">Input Transaksi</button>
+      <button onclick="tampilkan('jurnal')">Jurnal Umum</button>
+      <button onclick="tampilkan('buku')">Buku Besar</button>
+      <button onclick="tampilkan('neraca')">Neraca Saldo</button>
+    </div>
+
+    <div class="halaman" id="form">
+      <h2>Catat Transaksi</h2>
+      <hr />
+      <form id="form-transaksi">
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" id="tanggal" required />
+
+        <label for="akun">Nama Akun:</label>
+        <input type="text" id="akun" placeholder="Nama Akun" required />
+
+        <label for="keterangan">Keterangan:</label>
+        <input type="text" id="keterangan" placeholder="Keterangan" required />
+
+        <label for="debit">Debit:</label>
+        <input type="number" id="debit" value="0" required />
+
+        <label for="kredit">Kredit:</label>
+        <input type="number" id="kredit" value="0" required />
+
+        <button type="submit">Simpan Transaksi</button>
+      </form>
+    </div>
+
+    <div class="halaman" id="jurnal" style="display: none;">
+      <h2>Jurnal Umum</h2>
+      <table class="jurnal">
+        <thead>
+          <tr>
+            <th>Tanggal</th><th>Nama Akun</th><th>Keterangan</th><th>Debit</th><th>Kredit</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-jurnal"></tbody>
+      </table>
+    </div>
+
+    <div class="halaman" id="buku" style="display: none;">
+      <h2>Buku Besar</h2>
+      <div id="tabel-buku-besar"></div>
+    </div>
+
+    <div class="halaman" id="neraca" style="display: none;">
+      <h2>Neraca Saldo</h2>
+      <table class="jurnal">
+        <thead>
+          <tr><th>Nama Akun</th><th>Debit</th><th>Kredit</th></tr>
+        </thead>
+        <tbody id="tabel-neraca"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+<!-- Halaman Input Transaksi -->
+<div id="form" class="halaman">
+  <!-- form input transaksi -->
+</div>
+
+<!-- Halaman Jurnal Umum -->
+<div id="jurnal" class="halaman" style="display:none;">
+  <h2>Jurnal Umum</h2>
+  <table>
+    <thead>
+      <tr><th>Tanggal</th><th>Akun</th><th>Keterangan</th><th>Debit</th><th>Kredit</th></tr>
+    </thead>
+    <tbody id="tabel-jurnal"></tbody>
+  </table>
+</div>
+
+<!-- Halaman Buku Besar -->
+<div id="buku" class="halaman" style="display:none;">
+  <h2>Buku Besar</h2>
+ <div id="tabel-buku-besar"></div>
+</div>
+
+<!-- Halaman Neraca Saldo -->
+<div id="neraca" class="halaman" style="display:none;">
+  <h2>Neraca Saldo</h2>
+  <table>
+    <thead>
+      <tr><th>Akun</th><th>Total Debit</th><th>Total Kredit</th></tr>
+    </thead>
+    <tbody id="tabel-neraca"></tbody>
+  </table>
+</div>
